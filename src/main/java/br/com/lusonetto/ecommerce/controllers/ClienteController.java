@@ -51,7 +51,7 @@ public class ClienteController {
                     cliente.setLogin(newCliente.getLogin());
                     cliente.setSenha(newCliente.getSenha());
                     cliente.setEmail(newCliente.getEmail());
-                    cliente.setEmail(newCliente.getWhatsapp());
+                    cliente.setWhatsapp(newCliente.getWhatsapp());
                     return clienteRepository.save(cliente);
                 })
                 .orElseGet(() -> {
