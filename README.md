@@ -18,5 +18,5 @@ Este é um ecommerce pessoal
 ## Foi utilizado
 
 - Java 17
-- MySQL
+- MySQL (Por hora usando o H2)
 
