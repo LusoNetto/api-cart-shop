@@ -14,12 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.lusonetto.ecommerce.models.Cliente;
 import br.com.lusonetto.ecommerce.repositories.ClienteRepository;
+import br.com.lusonetto.ecommerce.services.ClienteService;
 
 @RestController
 @RequestMapping(value = "/clientes")
 public class ClienteController {
+
     @Autowired
     private ClienteRepository clienteRepository;
+    
+    @Autowired
+    private ClienteService clienteService;
 
     ClienteController(ClienteRepository clienteRepository) {
         this.clienteRepository = clienteRepository;
@@ -32,7 +37,7 @@ public class ClienteController {
 
     @PostMapping()
     Cliente newCliente(@RequestBody Cliente newCliente) {
-        return clienteRepository.save(newCliente);
+        return clienteService.newCliente(newCliente);
     }
 
     @GetMapping("/{id}")
